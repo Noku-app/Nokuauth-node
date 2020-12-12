@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@noku-app/nokubase": "^1.0.5",
+    "@noku-app/nokubase": "^1.0.9",
     "base64url": "^3.0.1",
     "bcrypt": "^5.0.0",
     "express": "^4.17.1",

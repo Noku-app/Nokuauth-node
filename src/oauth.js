@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require("body-parser");
-var databaseModule = require("../../database").database;
+var databaseModule = require("@noku-app/nokubase").database;
 var encryptio = require("./encryptio");
 var uid = encryptio.SnowflakeGenerator();
 
