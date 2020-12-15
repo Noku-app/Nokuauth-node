@@ -12,6 +12,11 @@ var database = new databaseModule(
     }
 );
 
+const validateEmail= email => {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
+
 const data = (_data) => {
     return {
         error: false,
@@ -44,6 +49,14 @@ router.post(
         };
 
         let email = req.body.email;
+
+        if (!validateEmail(email)) {
+            res.status(401);
+            return res.send(
+                error("invalid_email", "Your email is invalid.")
+            )
+        }
+
         let nick = req.body.nick;
         let password = req.body.password;
         
