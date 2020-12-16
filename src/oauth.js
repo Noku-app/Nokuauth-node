@@ -54,8 +54,8 @@ router.post(
             res.status(401);
             return res.send(
                 error("invalid_email", "Your email is invalid.")
-            )
-        }
+            );
+        };
 
         let nick = req.body.nick;
         let password = req.body.password;
@@ -96,8 +96,8 @@ router.post(
                 return;
             } else {
                 finalCallback();
-            }
-        }
+            };
+        };
 
         const emailCallback = async(emailTaken) => {
             if (emailTaken) {
@@ -213,8 +213,8 @@ router.post("/login",
         database.getUIDbyEmail(
             req.body.email,
             emailCallback
-        )
+        );
     }
-)
+);
 
 module.exports = router;
